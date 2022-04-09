@@ -1,5 +1,0 @@
----
-php:
-  webserver: nginx
-  webdirectory: web
-
