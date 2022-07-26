@@ -781,9 +781,9 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 $settings['config_sync_directory'] = '../config/sync';
 
 // Automatic Platform.sh settings.
-if (file_exists($app_root . '/' . $site_path . '/settings.shapeblock.php')) {
-  include $app_root . '/' . $site_path . '/settings.shapeblock.php';
-}
+//if (file_exists($app_root . '/' . $site_path . '/settings.shapeblock.php')) {
+//  include $app_root . '/' . $site_path . '/settings.shapeblock.php';
+//}
 
 // Local settings. These come last so that they can override anything.
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
@@ -795,3 +795,17 @@ if (getenv('LANDO')) {
       include $app_root . '/' . $site_path . '/settings.lando.php';
     }
 }
+
+$databases['default']['default'] = array (
+  'database' => getenv('DB_NAME'),
+  'username' => getenv('DB_USER'),
+  'password' => getenv('DB_PASS'),
+  'host' => getenv('DB_HOST'),
+  'prefix' => '',
+  'host' => 'cms-d9-4-mariadb',
+  'port' => '3306',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'driver' => 'mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+);
+
