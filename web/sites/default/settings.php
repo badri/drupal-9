@@ -802,7 +802,6 @@ $databases['default']['default'] = array (
   'password' => getenv('DB_PASS'),
   'host' => getenv('DB_HOST'),
   'prefix' => '',
-  'host' => 'cms-d9-4-mariadb',
   'port' => '3306',
   'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
   'driver' => 'mysql',
